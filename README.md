@@ -1,1 +1,2 @@
-# 4570776-creez-une-application-responsive-pour-ios
+# OpenQuizz
+This quiz app supports a course on iOS development on OpenClassrooms.
