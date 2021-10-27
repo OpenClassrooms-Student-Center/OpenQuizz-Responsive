@@ -59,9 +59,10 @@ final class QuestionManager {
     }
 
     private func getQuestionFrom(parsedData: [String: Any]) -> Question {
-        if let title = parsedData["question"] as? String,
-            let answer = parsedData["correct_answer"] as? String {
-            return Question(title: String(htmlEncodedString: title)!, isCorrect: (answer == "True"))
+        if let _title = parsedData["question"] as? String,
+           let answer = parsedData["correct_answer"] as? String,
+           let title = String(htmlEncodedString: _title) {
+            return Question(title: title, isCorrect: (answer == "True"))
         }
         return Question()
     }

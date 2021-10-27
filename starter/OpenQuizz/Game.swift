@@ -33,7 +33,8 @@ final class Game {
         currentIndex = 0
         state = .over
 
-        QuestionManager.shared.get { (questions) in
+        QuestionManager.shared.get { [weak self] questions in
+            guard let self = self else { return }
             self.questions = questions
             self.state = .ongoing
             let name = Notification.Name(rawValue: "QuestionsLoaded")
